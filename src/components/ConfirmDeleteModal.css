@@ -1,0 +1,97 @@
+/* src/components/ConfirmDeleteModal.css */
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.4s ease;
+}
+
+.modal-content h3 {
+  margin: 0 0 1rem;
+  color: #1a1a1a;
+}
+
+.modal-content p {
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.cancel-btn {
+  padding: 0.7rem 1.5rem;
+  background: #e2e8f0;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.delete-confirm-btn {
+  padding: 0.7rem 1.5rem;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.delete-confirm-btn:hover {
+  background: #dc2626;
+}
+
+.cancel-btn:hover {
+  background: #cbd5e1;
+}
+
+/* DARK MODE */
+html.dark .modal-content {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+html.dark .modal-content p {
+  color: #94a3b8;
+}
+
+html.dark .cancel-btn {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+html.dark .cancel-btn:hover {
+  background: #475569;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

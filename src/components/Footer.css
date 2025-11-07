@@ -1,0 +1,145 @@
+/* src/components/Footer.css */
+.footer {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  font-family: system-ui, -apple-system, sans-serif;
+  margin-top: auto; /* Pushes footer to bottom if using flex on App */
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  padding: 3rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.footer-section p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.links li {
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  animation: fadeInUp 0.6s forwards;
+}
+
+.links li:nth-child(1) { animation-delay: 0.1s; }
+.links li:nth-child(2) { animation-delay: 0.2s; }
+.links li:nth-child(3) { animation-delay: 0.3s; }
+.links li:nth-child(4) { animation-delay: 0.4s; }
+
+.links a {
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #00ccff; /* Matches your accent */
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #333;
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+  opacity: 0;
+  animation: fadeInUp 0.6s forwards;
+}
+
+.icon:nth-child(1) { animation-delay: 0.2s; }
+.icon:nth-child(2) { animation-delay: 0.3s; }
+.icon:nth-child(3) { animation-delay: 0.4s; }
+
+.icon:hover {
+  background: #00ccff;
+  transform: translateY(-2px);
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background: #333;
+  color: #fff;
+}
+
+.newsletter-form button {
+  padding: 0.75rem 1rem;
+  background: #00ccff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: #00aaff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  text-align: center;
+  padding: 1.5rem 5%;
+  margin-top: 2rem;
+  color: #888;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 5%;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+}

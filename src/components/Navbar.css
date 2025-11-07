@@ -1,0 +1,176 @@
+/* src/components/Navbar.css */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, #0f3443 0%, #1e5a6e 50%, #2c7a8a 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1.2rem 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar.scrolled {
+  padding: 0.8rem 3%;
+  background: linear-gradient(135deg, #012256 0%, #747a83 100%);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* LOGO */
+.navbar-logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+  transition: font-size 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar.scrolled .navbar-logo {
+  font-size: 1.9rem;
+  color: #a0e8ff;
+  transform: scale(1.15);
+}
+
+/* LINKS */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  display: flex;
+  align-items: center;
+}
+
+/* LINK HOVER */
+.navbar-links a {
+  position: relative;
+  color: #e0f7fa;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  white-space: nowrap;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #e3ea97;
+  transition: width 0.35s ease;
+  border-radius: 1px;
+}
+
+.navbar-links a:hover {
+  color: #e3ea97;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+.navbar.scrolled .navbar-links a {
+  color: #ffffff;
+}
+
+.navbar.scrolled .navbar-links a:hover {
+  color: #a0e8ff;
+}
+
+.navbar.scrolled .navbar-links a::after {
+  background-color: #a0e8ff;
+}
+
+/* SUN/MOON TOGGLE */
+.theme-toggle {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.theme-toggle .icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  position: absolute;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #e0f7fa;
+}
+
+.theme-toggle .sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.theme-toggle .moon {
+  opacity: 0;
+  transform: rotate(-180deg) scale(0.5);
+}
+
+html.dark .theme-toggle .sun {
+  opacity: 0;
+  transform: rotate(180deg) scale(0.5);
+}
+
+html.dark .theme-toggle .moon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+html.dark .theme-toggle .icon {
+  color: #94a3b8;
+}
+
+html.dark .theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ANIMATIONS */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar-links li {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: slideIn 0.5s forwards;
+}
+
+.navbar-links li:nth-child(1) { animation-delay: 0.1s; }
+.navbar-links li:nth-child(2) { animation-delay: 0.2s; }
+.navbar-links li:nth-child(3) { animation-delay: 0.3s; }
+.navbar-links li:nth-child(4) { animation-delay: 0.4s; }

@@ -1,0 +1,154 @@
+/* src/components/RotatingTagline.css */
+.tagline-section {
+  padding: 3rem 5%;
+  background: linear-gradient(135deg, #747a83 0%, #012256 100%);
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.tagline-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 2rem; /* Increased for breathing room */
+  padding: 0 1rem; /* Prevent edge touch */
+}
+
+.tagline-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 800px; /* Prevent overstretch */
+}
+
+.tagline {
+  /* RESPONSIVE FONT: 2rem → 3rem → 3.5rem max */
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #6734ff;
+  margin: 0;
+  height: clamp(60px, 10vw, 80px); /* Auto height */
+  position: relative;
+  overflow: hidden;
+  line-height: 1.2;
+}
+
+.tagline-item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform,transform 0.6s ease;
+  white-space: nowrap; /* Prevent line breaks */
+}
+
+.tagline-item.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ────── CREATE BUTTON ────── */
+.create-blog-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.8rem;
+  background: #00ccff;
+  color: rgb(16, 16, 16);
+  font-weight: 600;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 204, 255, 0.3);
+  white-space: nowrap;
+  min-width: 160px;
+  justify-content: center;
+  flex-shrink: 0; /* Prevent shrink */
+}
+
+.create-blog-btn:hover {
+  background: #6bbbe2;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 204, 255, 0.4);
+}
+
+.create-blog-btn:active {
+  transform: translateY(-1px);
+}
+
+.arrow {
+  width: 20px;
+  height: 20px;
+  fill: white;
+  transition: transform 0.3s ease;
+}
+
+.create-blog-btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* ────── RESPONSIVE ────── */
+@media (max-width: 992px) {
+  .tagline-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .tagline-text {
+    max-width: 100%;
+  }
+  .create-blog-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tagline-section {
+    padding: 2rem 5%;
+  }
+  .tagline {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+}
+/* src/components/RotatingTagline.css */
+.tagline-section {
+  padding: 2.5rem 5%;
+  background: linear-gradient(135deg, #f8fbfe 0%, #c3cfe2 100%);
+}
+
+.dark .tagline-section {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+}
+
+.tagline {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #6d36e3;
+}
+
+.dark .tagline {
+  color: #ffffff;
+}
+
+.create-blog-btn {
+  background: #00ccff;
+  color: rgb(14, 13, 13);
+}
+
+.dark .create-blog-btn {
+  background: #0ea5e9;
+}
+
+.dark .create-blog-btn:hover {
+  background: #0284c7;
+}
