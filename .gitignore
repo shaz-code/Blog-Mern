@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -22,3 +23,24 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+=======
+# Environment
+.env
+.env.local
+.env.production
+
+# Node
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.log
+>>>>>>> 123e916d9923716c1182067bfbc03f3e8a3d0ed4
